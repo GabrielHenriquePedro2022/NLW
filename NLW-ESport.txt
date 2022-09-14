@@ -1,0 +1,18 @@
+1ª aula: Introdução a programação, o que é programação, sintaxe da linguagem, o que é front e back-end, servidor, 
+javascript, html, css e NodeJS para back-end e sql para BD
+
+LevelUp
+
+
+2ª aula: Aprendemos sobre algumas tags básicas, como div, a = src (para imagens), section e etc.., começamos o esqueleto do site
+(o html dele)
+
+3ª --
+
+4ª --
+
+5ª --
+
+6ª --
+
+7ª -- 

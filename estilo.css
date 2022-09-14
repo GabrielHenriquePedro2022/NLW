@@ -1,0 +1,143 @@
+* {/*tira tudo isso de tudo da página (reseta o css)*/
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul{
+  list-style: none;/*tira os pontos da lista*/
+}
+body {
+  background-image: url(./assets/Fundo.jpg);
+  background-position: top center;
+  background-size: 100% auto;
+  background-repeat: no-repeat;/*Não repete a imagem*/
+  background-color: #121214;
+}
+body * {
+  font-family: 'Inter', sans-serif;/*O que está entre aspas é o que será utilizado, porém, caso não seja encontrado, irá utilizar a segunda fonte, a que está fora de aspas*/
+  line-height: 160%;/*Muda a altura da linha entre os itens*/
+}
+header{
+  padding-top: 32px;
+  height: calc(120px + 32px);/*serve para que o css faça calculos para você*/
+}
+header div{
+  width: 120px;
+  margin: auto;
+  background-image: linear-gradient(90deg, #9572fc 0%, #43E7Ad 50.52%, #E2D45C 100%);
+  border-radius: 50%;
+  display: flex;
+  padding: 4px;
+  transition: transform .3s;/*Se eu estiver passando o mouse por cima da minha imagem de perfil então esse comando será executado e deixará a animação de aumentar a imagem mais "suave"*/
+}
+header div:hover{/*o hover fignifica que quando eu passar o mouse por cima do que está na div, o que eu colocar aqui irá acontecer*/
+  transform: scale(1.1);
+
+}
+header div img{/*Vai configurar as imagens no header*/
+  width: 100%;
+  border-radius: 50%;
+}
+
+main {
+  max-width: 580px;/*tudo dentro do main vai tentar ter uma largura máxima de 580px*/ 
+  width: 90%;/*relativo à largura da tela*/ 
+  margin: 32px auto;/*faz um cálculo automático para a margem lateral (auto) e dá um espaço de 32px encima e embaixo (antes do cabeçalho)*/
+  display: flex;
+  flex-direction: column;/*deixa o gap como coluna, e não como o display flex deixa*/
+  gap: 24px;
+  
+}
+
+section{
+  color: white;
+  background-image: linear-gradient(90deg, #9572fc 0%, #43E7Ad 50.52%, #E2D45C 100%);/*mistura as cores, como aparece na parte superior dos cartões*/ 
+  padding-top: 4px;/*cria as barrinhas coloridas na parte superior dos cartões*/
+  border-radius: 10px;
+}
+section div{
+  background-color: #2A2634;/*cor dos cartões*/
+  padding: 32px;
+  padding-top: 24px;
+  border-radius: 8px;
+
+}
+section h2{
+  letter-spacing: -0.47px;/*espaço entre as letras*/
+}
+
+section p{
+  letter-spacing: -0.10px;
+  color:#A1A1AA;
+}
+
+section ul{
+  display: flex;/*Tem haver com a visualização dos elementos. Existem 2 tipos, 1 que modifica a caixa e outro que modifica caixas dentro de caixas, sendo que as caixas são as tags. O display flex faz com que os itens fiquem 1 ao lado do outro*/
+
+  flex-wrap: wrap;/*faz um ajuste, caso o usuário coloque mais jogos que gosta, por exemplo, os jogos que irão aparecer começarão a empurrar a tela para o lado, o que é errado, então essa função faz com que caso a linha esteja para ser rompida, os elementos a mais vão uma linha para baixo*/
+
+  gap: 16px;/*Dá um espaço entre os itens, que estão 1 ao lado do outro, ou seja, sem o display o gap não funcionaria*/
+  margin-top: 24px;
+}
+section ul li{
+  transition: transform .3s;
+}
+section ul li:hover{
+  transform: scale(1.1);
+}
+
+.games-list img {/*modifica as imagens*/
+  width: 90px;
+  border-radius: 8px;/*arredondamento das bordas de 8px*/
+}
+
+.channel-list img{
+  border-radius: 50%;/*arredonda a imagem*/
+  width: 70px;
+  border: 1px solid #443E54;
+}
+
+/*animation*/
+
+header div{/*eu estou usando o mesmo header div lá de cima, porém escrevi ele denovo para ficar mais facil colocar as coisas*/
+  animation: fromTop .7s .2s backwards; /*o 1s é o delay*/
+}
+main section{
+  animation: fromBottom .7s backwards;
+}
+main section:nth-child(1){/*Serve para pegar um "filho" específico dentro de uma tag, ex: dentro do main eu tenho as tags section, as sections são as tags filhas, o 1 representa qual delas eu vou pegar*/
+  animation-delay: 0;
+
+}
+main section:nth-child(2){
+  animation-delay: .4s;
+}
+main section:nth-child(3){
+  animation-delay: .8s;
+}
+
+@keyframes fromTop{/*o keyframes serve para darmos início a uma animação, e o fromTop é só o nome dela, poderia ser qualquer outra coisa, porém é esse pois irá começar lá encima*/
+  from {
+    opacity: 0;
+    transform: translateY(-30px);/*começará no eixo Y de -30px*/
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);/*irá para a posição que estava antes, que é a 0*/
+  }
+
+}
+
+@keyframes fromBottom{
+  from {
+    opacity: 0;
+    transform: translateX(30px);/*começará no eixo Y de -30px*/
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);/*irá para a posição que estava antes, que é a 0*/
+  }
+
+}
